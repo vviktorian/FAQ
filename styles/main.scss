@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'mixins';
+
+body{
+    margin:0;
+    padding: 0;
+    background: linear-gradient(180deg, $softViolet 35%, $softBlue 65%);
+    main{
+        height: 100vh;
+        @include flex(null, center, center);
+        .mainBox{
+            background-color: #fff;
+            height: 477px;
+            width: 864px;
+            border-radius: 20px;
+            @include flex(row, space-between, center);
+            overflow: hidden;
+            .imageArea{
+                background-image: url('../images/bg-pattern-desktop.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: -20% 0%;
+                height: 200%;
+                margin-left: -18%;
+                width: 70%;
+                @include flex(initial,center,center);
+                background-position-x: -460px;
+                background-position-y: -45px;
+            }
+            .textArea{
+                width: 50%;
+            }
+        }
+    }
+}
+

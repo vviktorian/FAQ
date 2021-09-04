@@ -1,0 +1,70 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(35%, #af67e9), color-stop(65%, #6565e7));
+  background: linear-gradient(180deg, #af67e9 35%, #6565e7 65%);
+}
+
+body main {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .mainBox {
+  background-color: #fff;
+  height: 477px;
+  width: 864px;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  overflow: hidden;
+}
+
+body main .mainBox .imageArea {
+  background-image: url("../images/bg-pattern-desktop.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: -20% 0%;
+  height: 200%;
+  margin-left: -18%;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: initial;
+  -webkit-box-direction: initial;
+      -ms-flex-direction: initial;
+          flex-direction: initial;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-position-x: -460px;
+  background-position-y: -45px;
+}
+
+body main .mainBox .textArea {
+  width: 50%;
+}
+/*# sourceMappingURL=main.css.map */
