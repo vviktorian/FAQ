@@ -1,8 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+@-webkit-keyframes growDown {
+  0% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+@keyframes growDown {
+  0% {
+    -webkit-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(35%, #af67e9), color-stop(65%, #6565e7));
   background: linear-gradient(180deg, #af67e9 35%, #6565e7 65%);
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 body main {
@@ -65,6 +88,92 @@ body main .mainBox .imageArea {
 }
 
 body main .mainBox .textArea {
-  width: 50%;
+  height: 100%;
+  width: 48.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-weight: 400;
+}
+
+body main .mainBox .textArea .textHeader {
+  font-size: 29px;
+  font-weight: 700;
+  margin-bottom: 34px;
+}
+
+body main .mainBox .textArea .faqArea .q_aSection {
+  width: 300px;
+  border-bottom: 2px solid #e7e7e9;
+  padding: 0 10px 10px 0;
+  margin-bottom: 10px;
+}
+
+body main .mainBox .textArea .faqArea .question {
+  font-size: 14px;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  cursor: pointer;
+  font-weight: 400;
+  color: #4a4b5e;
+}
+
+body main .mainBox .textArea .faqArea .question:hover {
+  color: #f47c57;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+}
+
+body main .mainBox .textArea .faqArea .question.bold {
+  font-weight: 700;
+}
+
+body main .mainBox .textArea .faqArea .question .arrowIcon {
+  -webkit-transition: 0.3s ease-out;
+  transition: 0.3s ease-out;
+}
+
+body main .mainBox .textArea .faqArea .question .arrowIcon.open {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+}
+
+body main .mainBox .textArea .faqArea .answer {
+  font-size: 12px;
+  display: none;
+  -webkit-transition: 0.5s ease-out;
+  transition: 0.5s ease-out;
+  height: 40px;
+  color: #787887;
+}
+
+body main .mainBox .textArea .faqArea .answer.active {
+  -webkit-animation: growDown 300ms;
+          animation: growDown 300ms;
+  -webkit-transform-origin: top center;
+          transform-origin: top center;
+  display: block;
 }
 /*# sourceMappingURL=main.css.map */

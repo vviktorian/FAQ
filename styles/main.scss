@@ -1,10 +1,21 @@
 @import 'variables';
 @import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+@keyframes growDown {
+    0% {
+      transform: rotateX(-90deg)
+    }
+    100% {
+      transform: rotateX(0deg)
+    } 
+  }
 
 body{
     margin:0;
     padding: 0;
     background: linear-gradient(180deg, $softViolet 35%, $softBlue 65%);
+    font-family: 'Kumbh Sans', sans-serif;
     main{
         height: 100vh;
         @include flex(null, center, center);
@@ -28,7 +39,56 @@ body{
                 background-position-y: -45px;
             }
             .textArea{
-                width: 50%;
+                height: 100%;
+                width: 48.5%;
+                @include flex(column, center, flex-start);
+                font-weight: 400;
+                .textHeader{
+                    font-size: 29px;
+                    font-weight: 700;
+                    margin-bottom: 34px;
+                }
+                .faqArea{
+                    .q_aSection{
+                        width: 300px;
+                        border-bottom: 2px solid $lightGreyishBlue;
+                        padding: 0 10px 10px 0;
+                        margin-bottom: 10px;
+                    }
+                    .question{
+                        font-size: 14px;
+                        margin-bottom: 8px;
+                        @include flex(row, space-between, center);
+                        cursor: pointer;
+                        font-weight: 400;
+                        color: $veryDarkGreyishBlue;
+                        &:hover{
+                            color:$lightOrange;
+                            transition: 0.5s ease-out;
+                        }
+                        &.bold{
+                            font-weight: 700;
+                        }
+                        .arrowIcon{
+                            transition: 0.3s ease-out;
+                            &.open{
+                                transform: rotate(-180deg);
+                            }
+                        }
+                    }
+                    .answer{
+                        font-size: 12px;
+                        display: none;
+                        transition: 0.5s ease-out;
+                        height: 40px;
+                        color: $darkGreyishBlue;
+                        &.active{
+                            animation: growDown 300ms;
+                            transform-origin: top center;
+                            display: block;
+                        }
+                    }
+                }
             }
         }
     }
