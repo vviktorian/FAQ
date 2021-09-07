@@ -1,0 +1,128 @@
+@import 'variables';
+@import 'mixins';
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+@keyframes growDown {
+    0% {
+      transform: rotateX(-90deg)
+    }
+    100% {
+      transform: rotateX(0deg)
+    } 
+  }
+
+body{
+    margin:0;
+    padding: 0;
+    background: linear-gradient(180deg, $softViolet 35%, $softBlue 65%);
+    font-family: 'Kumbh Sans', sans-serif;
+    main{
+        min-height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
+        @include flex(null, center, center);
+        @media(max-width: $mobileBreakpoint){
+            padding: 120px 30px;
+        }
+        .mainBox{
+            background-color: #fff;
+            height: 477px;
+            width: 864px;
+            border-radius: 20px;
+            @include flex(row, space-between, center);
+            overflow: hidden;
+            @media(max-width: $mobileBreakpoint){
+                @include flex(column, center, center);
+                height: auto;
+                padding: 10px;
+                overflow: inherit;
+                width: auto;
+                padding: 40px;
+                box-sizing: border-box;
+            }
+            @media(max-width: $smallMobileBreakpoint){
+                padding: 20px 5px;
+            }
+            .imageArea{
+                background-image: url('../images/bg-pattern-desktop.svg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: -20% 0%;
+                height: 200%;
+                margin-left: -18%;
+                width: 70%;
+                @include flex(initial,center,center);
+                background-position-x: -460px;
+                background-position-y: -45px;
+                @media(max-width: $mobileBreakpoint){
+                    height: inherit;
+                    width: auto;
+                    margin-left: 0;
+                    margin-top: -180px;
+                    background-position: 0;
+                    height: 165%;
+                    padding: 30px 0;
+                }
+                @media(max-width: $smallMobileBreakpoint){
+                    margin-top: -155px;
+                }
+            }
+            .textArea{
+                height: 100%;
+                width: 48.5%;
+                @include flex(column, center, flex-start);
+                font-weight: 400;
+                @media(max-width: $mobileBreakpoint){
+                    @include flex(column, center, center);
+                }
+                .textHeader{
+                    font-size: 29px;
+                    font-weight: 700;
+                    margin-bottom: 34px;
+                }
+                .faqArea{
+                    .q_aSection{
+                        width: 300px;
+                        border-bottom: 2px solid $lightGreyishBlue;
+                        padding: 0 10px 10px 0;
+                        margin-bottom: 10px;
+                    }
+                    .question{
+                        font-size: 14px;
+                        margin-bottom: 8px;
+                        @include flex(row, space-between, center);
+                        cursor: pointer;
+                        font-weight: 400;
+                        color: $veryDarkGreyishBlue;
+                        &:hover{
+                            color:$lightOrange;
+                            transition: 0.5s ease-out;
+                        }
+                        &.bold{
+                            font-weight: 700;
+                        }
+                        .arrowIcon{
+                            transition: 0.3s ease-out;
+                            &.open{
+                                transform: rotate(-180deg);
+                            }
+                        }
+                    }
+                    .answer{
+                        font-size: 12px;
+                        display: none;
+                        transition: 0.5s ease-out;
+                        height: 40px;
+                        color: $darkGreyishBlue;
+                        &.active{
+                            animation: growDown 300ms;
+                            transform-origin: top center;
+                            display: block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
