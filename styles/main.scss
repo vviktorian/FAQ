@@ -17,8 +17,13 @@ body{
     background: linear-gradient(180deg, $softViolet 35%, $softBlue 65%);
     font-family: 'Kumbh Sans', sans-serif;
     main{
-        height: 100vh;
+        min-height: 100vh;
+        padding: 10px;
+        box-sizing: border-box;
         @include flex(null, center, center);
+        @media(max-width: $mobileBreakpoint){
+            padding: 120px 30px;
+        }
         .mainBox{
             background-color: #fff;
             height: 477px;
@@ -26,6 +31,18 @@ body{
             border-radius: 20px;
             @include flex(row, space-between, center);
             overflow: hidden;
+            @media(max-width: $mobileBreakpoint){
+                @include flex(column, center, center);
+                height: auto;
+                padding: 10px;
+                overflow: inherit;
+                width: auto;
+                padding: 40px;
+                box-sizing: border-box;
+            }
+            @media(max-width: $smallMobileBreakpoint){
+                padding: 20px 5px;
+            }
             .imageArea{
                 background-image: url('../images/bg-pattern-desktop.svg');
                 background-size: cover;
@@ -37,12 +54,27 @@ body{
                 @include flex(initial,center,center);
                 background-position-x: -460px;
                 background-position-y: -45px;
+                @media(max-width: $mobileBreakpoint){
+                    height: inherit;
+                    width: auto;
+                    margin-left: 0;
+                    margin-top: -180px;
+                    background-position: 0;
+                    height: 165%;
+                    padding: 30px 0;
+                }
+                @media(max-width: $smallMobileBreakpoint){
+                    margin-top: -155px;
+                }
             }
             .textArea{
                 height: 100%;
                 width: 48.5%;
                 @include flex(column, center, flex-start);
                 font-weight: 400;
+                @media(max-width: $mobileBreakpoint){
+                    @include flex(column, center, center);
+                }
                 .textHeader{
                     font-size: 29px;
                     font-weight: 700;

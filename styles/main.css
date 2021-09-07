@@ -29,7 +29,10 @@ body {
 }
 
 body main {
-  height: 100vh;
+  min-height: 100vh;
+  padding: 10px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -39,6 +42,12 @@ body main {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+@media (max-width: 780px) {
+  body main {
+    padding: 120px 30px;
+  }
 }
 
 body main .mainBox {
@@ -60,6 +69,37 @@ body main .mainBox {
       -ms-flex-pack: justify;
           justify-content: space-between;
   overflow: hidden;
+}
+
+@media (max-width: 780px) {
+  body main .mainBox {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: auto;
+    padding: 10px;
+    overflow: inherit;
+    width: auto;
+    padding: 40px;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+}
+
+@media (max-width: 400px) {
+  body main .mainBox {
+    padding: 20px 5px;
+  }
 }
 
 body main .mainBox .imageArea {
@@ -87,6 +127,24 @@ body main .mainBox .imageArea {
   background-position-y: -45px;
 }
 
+@media (max-width: 780px) {
+  body main .mainBox .imageArea {
+    height: inherit;
+    width: auto;
+    margin-left: 0;
+    margin-top: -180px;
+    background-position: 0;
+    height: 165%;
+    padding: 30px 0;
+  }
+}
+
+@media (max-width: 400px) {
+  body main .mainBox .imageArea {
+    margin-top: -155px;
+  }
+}
+
 body main .mainBox .textArea {
   height: 100%;
   width: 48.5%;
@@ -104,6 +162,24 @@ body main .mainBox .textArea {
       -ms-flex-pack: center;
           justify-content: center;
   font-weight: 400;
+}
+
+@media (max-width: 780px) {
+  body main .mainBox .textArea {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 
 body main .mainBox .textArea .textHeader {
